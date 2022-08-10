@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/html">
+
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/static/css/style.css}">
+    <script th:src="@{/static/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/jquery-3.2.1.slim.min.js}"></script>
+    <script th:src="@{/static/js/popper.min.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>
+</head>
+<body>
+<header th:fragment="header">
+    <div class="container w-1280px pr-40px pl-40px mr-auto ml-auto">
+        <div class="site-header d-flex w-100 align-items-center m-0 justify-content-between h-52px">
+            <div class="logo" style="border-right: 2px solid #f7f7f7; margin-right: 10px;padding: 5px">
+                <a href="/" title="Home"><img src="/static/images/header-logo.svg" alt="Ticket-online" width="160"
+                                              height="50"></a>
+            </div>
+            <div>
+                <form class="form">
+                    <input style="width: 600px" class="form-control mr-sm-2" type="search" th:placeholder="#{search}"
+                           aria-label="Search" name="search">
+                </form>
+            </div>
+            <div sec:authorize="isAuthenticated()"
+                 style="border-right: 2px solid #f7f7f7; padding: 7px 14px;align-items: center">
+                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="cart">
+                    <circle cx="7.3" cy="17.3" r="1.4"></circle>
+                    <circle cx="13.3" cy="17.3" r="1.4">
+                    </circle>
+                    <polyline fill="none" stroke="#000" points="0 2 3.2 4 5.3 12.5 16 12.5 18 6.5 8 6.5"></polyline>
+                </svg>
+                <a href="/basket" title="Basket"
+                   style="text-decoration: none;padding-right: 10px;" th:text="#{basket}"></a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Language
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/?lang=uz">Uzbek</a>
+                    <a class="dropdown-item" href="/?lang=en">English</a>
+                    <a class="dropdown-item" href="/?lang=ru">Russian</a>
+                </div>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <a href="/auth/login" class="stretched-link"><strong th:text="#{login}"></strong></a>
+            </div>
+            <div sec:authorize="isAnonymous()  && !hasRole('ADMIN')">||</div>
+            <div sec:authorize="isAnonymous()">
+                <a href="/auth/register" class="stretched-link"><strong th:text="#{register}"></strong></a>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <a href="/auth/logout" class="stretched-link" th:text="#{logout}" data-toggle="modal"
+                   data-target=".bd-example-modal-lg"></a>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                     aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <form method="post" th:action="@{/auth/logout}">
+                                <div class="container">
+                                    <h1 th:text="#{message.logout}"></h1>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <button type="submit" class="btn btn-light" onclick="clearSessionCookie();"
+                                        th:text="#{yes}"></button>
+                                <a th:href="@{/}" class="btn btn-light focus" th:text="#{back}"></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="margin: 0"/>
+</header>
+<section th:fragment="js_files">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</section>
+</body>
+</html>

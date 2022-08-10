@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments.html :: head('Login Page')"></head>
+<body>
+<section class="login">
+    <div class="login_box">
+        <div class="left">
+            <div class="contact">
+                <form method="post" th:action="@{/auth/login}">
+                    <h3 th:text="#{login}"></h3>
+                    <label for="username" th:text="#{username}"></label>
+                    <input type="text" class="form-control" id="username" name="uname">
+                    <label for="password" th:text="#{password}"></label>
+                    <input type="password" class="form-control" id="password" name="pswd">
+                    <input hidden type="checkbox" checked class="form-check-input" id="remember-me" name="rememberMe">
+                    <button class="submit" th:text="#{login}"></button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-text">
+                <img style="width: 70%;margin-left: 40px" src="../../static/images/header-logo.svg">
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

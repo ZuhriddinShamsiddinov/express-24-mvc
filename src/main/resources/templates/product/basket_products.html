@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:include="fragments.html :: head('Login Page')">
+    <link href="../../static/css/cart.css">
+</head>
+<body>
+<section th:include="fragments.html :: header"></section>
+<br>
+<br>
+<br>
+<h1 style="text-align: center;color: red" th:if="${itemList.size()==0}">You have not any products in cart</h1>
+<div th:if="${itemList.size()!=0}" class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-8 cart">
+                <div class="title">
+                    <div class="row">
+                        <div class="col"><h4><b th:text="#{shopping.cart}"></b></h4></div>
+                        <div class="col align-self-center text-right text-muted"
+                             th:text="${itemList.size() }"> items
+                        </div>
+                    </div>
+                </div>
+                <th:block th:each="item, counter : ${itemList}">
+                    <div class="row border-top border-bottom">
+                        <div class="row main align-items-center">
+                            <div class="col-2"><img class="img-fluid"
+                                                    th:src="@{'/product/display?img='+${item.product.image.path}}">
+                            </div>
+                            <div class="col">
+                                <div class="row text-muted" th:text="${item.product.name}"></div>
+                                <div class="row" th:text="${item.product.description}"></div>
+                            </div>
+                            <div class="col">
+                                <a href="#">-</a><a href="#" class="border" th:text="${item.quantity}"></a><a
+                                    href="#">+</a>
+                            </div>
+                            <div class="col" th:text="${item.quantity * item.product.price}"><span class="close">&#10005;</span>
+                            </div>
+                            <a th:href="@{'/basket/delete/'+${item.id}}" class="btn btn-outline-danger">Remove</a>
+                        </div>
+                    </div>
+                </th:block>
+
+            </div>
+            <div class="col-md-4 summary">
+                <div><h5><b>Summary</b></h5></div>
+                <hr>
+                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                    <div class="col" th:text="#{total.price}"></div>
+                    <div class="col text-right" th:text="${totalPrice}"></div>
+                </div>
+                <a th:href="@{'/basket/payment/?totalPrice='+${totalPrice}}" class="btn btn-success"
+                   style="color: white !important;"
+                   th:text="#{buy}"></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<a class="btn btn-light focus" href="/" th:text="#{back}"></a>
+</body>
+</html>
