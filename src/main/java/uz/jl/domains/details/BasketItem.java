@@ -1,6 +1,8 @@
-package uz.jl.domains;
+package uz.jl.domains.details;
 
 import lombok.*;
+import uz.jl.domains.Product;
+import uz.jl.domains.auth.AuthUser;
 
 import javax.persistence.*;
 

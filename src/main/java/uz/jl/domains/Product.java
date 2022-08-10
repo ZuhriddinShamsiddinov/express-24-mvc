@@ -1,6 +1,7 @@
 package uz.jl.domains;
 
 import lombok.*;
+import uz.jl.domains.details.Category;
 
 import javax.persistence.*;
 

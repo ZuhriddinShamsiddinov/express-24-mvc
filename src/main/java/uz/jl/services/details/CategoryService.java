@@ -1,13 +1,14 @@
-package uz.jl.services;
+package uz.jl.services.details;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import uz.jl.domains.Category;
+import uz.jl.domains.details.Category;
 import uz.jl.domains.Uploads;
-import uz.jl.dto.CategoryDTO;
+import uz.jl.dto.details.CategoryDTO;
 import uz.jl.exceptions.NotfoundException;
-import uz.jl.repository.CategoryRepository;
+import uz.jl.repository.details.CategoryRepository;
+import uz.jl.services.FileStorageService;
 
 import java.util.ArrayList;
 import java.util.List;

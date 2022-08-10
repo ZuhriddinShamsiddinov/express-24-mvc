@@ -1,6 +1,7 @@
-package uz.jl.domains;
+package uz.jl.domains.auth;
 
 import lombok.*;
+import uz.jl.domains.auth.AuthRole;
 
 import javax.persistence.*;
 import java.io.Serializable;

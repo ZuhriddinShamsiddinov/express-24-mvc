@@ -1,4 +1,4 @@
-package uz.jl.controller;
+package uz.jl.controller.auth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uz.jl.dto.AuthUserCreateDTO;
-import uz.jl.services.AuthService;
+import uz.jl.dto.auth.AuthUserCreateDTO;
+import uz.jl.services.auth.AuthService;
 
 import javax.validation.Valid;
 

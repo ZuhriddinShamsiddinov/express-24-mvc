@@ -1,4 +1,4 @@
-package uz.jl.dto;
+package uz.jl.dto.auth;
 
 
 import jakarta.validation.constraints.Email;

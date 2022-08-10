@@ -1,6 +1,7 @@
-package uz.jl.domains;
+package uz.jl.domains.details;
 
 import lombok.*;
+import uz.jl.domains.Uploads;
 
 import javax.persistence.*;
 

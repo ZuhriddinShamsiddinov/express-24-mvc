@@ -1,15 +1,14 @@
-package uz.jl.controller;
+package uz.jl.controller.details;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import uz.jl.dto.CategoryDTO;
-import uz.jl.services.CategoryService;
+import uz.jl.dto.details.CategoryDTO;
+import uz.jl.services.details.CategoryService;
 
 import javax.servlet.ServletOutputStream;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.file.Files;

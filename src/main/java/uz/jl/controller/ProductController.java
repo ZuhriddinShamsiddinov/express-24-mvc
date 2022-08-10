@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import uz.jl.domains.Product;
 import uz.jl.dto.ProductDTO;
-import uz.jl.services.CategoryService;
+import uz.jl.services.details.CategoryService;
 import uz.jl.services.ProductService;
 
 import javax.servlet.ServletOutputStream;

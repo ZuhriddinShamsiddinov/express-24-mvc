@@ -1,18 +1,18 @@
-package uz.jl.services;
+package uz.jl.services.details;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import uz.jl.configs.security.UserDetails;
-import uz.jl.domains.AuthUser;
-import uz.jl.domains.BasketItem;
-import uz.jl.domains.Card;
+import uz.jl.domains.auth.AuthUser;
+import uz.jl.domains.details.BasketItem;
+import uz.jl.domains.details.Card;
 import uz.jl.domains.Product;
-import uz.jl.dto.BasketItemDTO;
-import uz.jl.dto.CardDTO;
+import uz.jl.dto.details.BasketItemDTO;
+import uz.jl.dto.details.CardDTO;
 import uz.jl.exceptions.NotfoundException;
 import uz.jl.mapper.CardMapper;
-import uz.jl.repository.BasketItemRepository;
-import uz.jl.repository.CardRepository;
+import uz.jl.repository.details.BasketItemRepository;
+import uz.jl.repository.details.CardRepository;
 import uz.jl.repository.ProductRepository;
 
 import java.util.List;

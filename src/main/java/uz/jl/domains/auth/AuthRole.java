@@ -1,7 +1,8 @@
-package uz.jl.domains;
+package uz.jl.domains.auth;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
+import uz.jl.domains.auth.AuthPermission;
 
 import javax.persistence.*;
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
-package uz.jl.repository;
+package uz.jl.repository.details;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import uz.jl.domains.BasketItem;
+import uz.jl.domains.details.BasketItem;
 
 import java.util.List;
 import java.util.Optional;

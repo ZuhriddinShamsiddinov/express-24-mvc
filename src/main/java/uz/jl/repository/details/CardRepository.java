@@ -1,7 +1,7 @@
-package uz.jl.repository;
+package uz.jl.repository.details;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uz.jl.domains.Card;
+import uz.jl.domains.details.Card;
 
 import java.util.Optional;
 

@@ -4,12 +4,11 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
-import uz.jl.domains.AuthRole;
-import uz.jl.domains.AuthUser;
-import uz.jl.repository.AuthPermissionRepository;
-import uz.jl.repository.AuthRepository;
-import uz.jl.repository.AuthRoleRepository;
+import uz.jl.domains.auth.AuthRole;
+import uz.jl.domains.auth.AuthUser;
+import uz.jl.repository.auth.AuthPermissionRepository;
+import uz.jl.repository.auth.AuthRepository;
+import uz.jl.repository.auth.AuthRoleRepository;
 
 //@Component
 public class InitDB implements ApplicationContextAware {

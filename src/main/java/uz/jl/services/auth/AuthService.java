@@ -1,4 +1,4 @@
-package uz.jl.services;
+package uz.jl.services.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import uz.jl.configs.security.UserDetails;
-import uz.jl.domains.AuthUser;
-import uz.jl.dto.AuthUserCreateDTO;
+import uz.jl.domains.auth.AuthUser;
+import uz.jl.dto.auth.AuthUserCreateDTO;
 import uz.jl.exceptions.ObjectAlreadyExistsException;
-import uz.jl.repository.AuthRepository;
+import uz.jl.repository.auth.AuthRepository;
 
 import java.util.Objects;
 import java.util.Optional;

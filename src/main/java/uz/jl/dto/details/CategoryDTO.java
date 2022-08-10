@@ -1,4 +1,4 @@
-package uz.jl.dto;
+package uz.jl.dto.details;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -3,9 +3,9 @@ package uz.jl.configs.security;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import uz.jl.domains.AuthPermission;
-import uz.jl.domains.AuthRole;
-import uz.jl.domains.AuthUser;
+import uz.jl.domains.auth.AuthPermission;
+import uz.jl.domains.auth.AuthRole;
+import uz.jl.domains.auth.AuthUser;
 
 import java.util.Collection;
 import java.util.HashSet;

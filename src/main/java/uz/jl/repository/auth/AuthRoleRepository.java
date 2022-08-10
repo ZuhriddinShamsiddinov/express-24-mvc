@@ -1,7 +1,7 @@
-package uz.jl.repository;
+package uz.jl.repository.auth;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uz.jl.domains.AuthRole;
+import uz.jl.domains.auth.AuthRole;
 
 import java.util.Optional;
 

@@ -3,12 +3,13 @@ package uz.jl.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import uz.jl.domains.Category;
+import uz.jl.domains.details.Category;
 import uz.jl.domains.Product;
 import uz.jl.domains.Uploads;
 import uz.jl.dto.ProductDTO;
 import uz.jl.mapper.ProductMapper;
 import uz.jl.repository.ProductRepository;
+import uz.jl.services.details.CategoryService;
 
 import java.util.List;
 

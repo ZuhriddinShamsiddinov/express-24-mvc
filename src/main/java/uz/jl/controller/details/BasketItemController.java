@@ -1,4 +1,4 @@
-package uz.jl.controller;
+package uz.jl.controller.details;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import uz.jl.configs.security.UserDetails;
-import uz.jl.domains.BasketItem;
-import uz.jl.dto.BasketItemDTO;
-import uz.jl.dto.CardDTO;
-import uz.jl.services.BasketItemService;
+import uz.jl.domains.details.BasketItem;
+import uz.jl.dto.details.BasketItemDTO;
+import uz.jl.dto.details.CardDTO;
+import uz.jl.services.details.BasketItemService;
 
 import java.util.List;
 
