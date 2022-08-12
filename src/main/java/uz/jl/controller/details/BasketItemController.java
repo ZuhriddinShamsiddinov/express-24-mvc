@@ -52,13 +52,16 @@ public class BasketItemController {
 
     @PostMapping("/payment")
     @PreAuthorize("isAuthenticated()")
-    public String checkout(@ModelAttribute CardDTO cardDTO, @AuthenticationPrincipal UserDetails userDetails, @RequestParam("totalAmount") double totalAmount) {
+    public String checkout(@ModelAttribute CardDTO cardDTO,
+                           @AuthenticationPrincipal UserDetails userDetails,
+                           @RequestParam("totalAmount") double totalAmount) {
         basketItemService.checkout(cardDTO, userDetails, totalAmount);
         return "/";
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Long id, @AuthenticationPrincipal UserDetails userDetails) {
+    public String delete(@PathVariable("id") Long id,
+                         @AuthenticationPrincipal UserDetails userDetails) {
         basketItemService.delete(id, userDetails);
         return "redirect:/basket";
     }
